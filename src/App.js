@@ -1,5 +1,6 @@
 import MyButton from "./components/MyButton";
 import './styles/App.css'
+import { useState } from "react"
 
 const user = {
   name: 'Hedy Lamarr',
@@ -24,11 +25,18 @@ const products = [
 
 
 function App() {
+
+  const [count, setCount] = useState(0);
+
+  function HandleClick() {
+    setCount(count + 1);
+  }
+
   return (
     <div>
       <h1 className="red">Welcome to my app</h1>
-      <MyButton />
-      <MyButton />
+      <MyButton count={count} onClick={HandleClick} />
+      <MyButton count={count} onClick={HandleClick}/>
       <h2>{user.name}</h2>
       <img
         className="avatar"
@@ -54,7 +62,7 @@ function App() {
       <h2>List</h2>
       <ul>
         {products.map(product =>
-          <li 
+          <li
             key={product.id}
             style={{
               color: product.isFruit ? 'magenta' : 'darkgreen'
