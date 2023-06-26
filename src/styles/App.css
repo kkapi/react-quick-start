@@ -11,3 +11,7 @@
 .red {
     color: red;
 }
+
+.avatar {
+    border-radius: 50%;
+  }
