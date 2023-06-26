@@ -7,6 +7,17 @@ const user = {
   imageSize: 90,
 };
 
+let content;
+let isLogin = true;
+
+if (isLogin) {
+  content = <div>auth</div>
+} else {
+  content = <div>error</div>
+}
+
+
+
 function App() {
   return (
     <div>
@@ -22,6 +33,17 @@ function App() {
           height: user.imageSize
         }}
       />
+      {content}
+
+      {isLogin ? (
+        <div>Ternary auth</div>
+      ) : (
+        <div>Ternary error</div>
+      )}
+
+      {
+        isLogin && <div>&& auth</div>
+      }
     </div> 
   );
 }
