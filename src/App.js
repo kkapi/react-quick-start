@@ -16,6 +16,11 @@ if (isLogin) {
   content = <div>error</div>
 }
 
+const products = [
+  { title: 'Cabbage', isFruit: false, id: 1 },
+  { title: 'Garlic', isFruit: false, id: 2 },
+  { title: 'Apple', isFruit: true, id: 3 },
+];
 
 
 function App() {
@@ -44,7 +49,22 @@ function App() {
       {
         isLogin && <div>&& auth</div>
       }
-    </div> 
+
+      <h2>List</h2>
+      <ul>
+        {products.map(product =>
+          <li 
+            key={product.id}
+            style={{
+              color: product.isFruit ? 'magenta' : 'darkgreen'
+            }}
+          >
+            {product.title}
+          </li>
+        )}
+      </ul>
+
+    </div>
   );
 }
 
