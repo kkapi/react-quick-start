@@ -28,6 +28,7 @@ function App() {
     <div>
       <h1 className="red">Welcome to my app</h1>
       <MyButton />
+      <MyButton />
       <h2>{user.name}</h2>
       <img
         className="avatar"
