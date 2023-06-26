@@ -1,5 +1,10 @@
 export default function MyButton() {
+
+    function HandleClick() {
+        alert('Click!')
+      }
+
     return (
-        <button>I'm a button</button>
+        <button onClick={HandleClick}>I'm a button</button>
     )
 }
